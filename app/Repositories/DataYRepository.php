@@ -19,10 +19,14 @@ class DataYRepository implements DataYinterface
     public function getDataY($dataParameters)
     {
 
-        $fileData = json_decode(Storage::disk('public')->get('DataY.json'), true);
+        $fileData = json_decode(Storage::disk('file_json')->get('DataY.json'), true);
 
         $q=collect($fileData);
 
+
+        if(isset($dataParameters['currency'])){
+           $q=$q->where('currency',$dataParameters['currency']);
+        }
         switch(isset($dataParameters['status']) ? $dataParameters['status'] : null){
             case "paid":
             $dataY=$q->where('status',100);
@@ -36,6 +40,8 @@ class DataYRepository implements DataYinterface
             default:
               $dataY=$q;
           }
+
+         
 
           return $dataY;
 

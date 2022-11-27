@@ -20,7 +20,7 @@ class DataXRepository implements DataXinterface
     public function getDataX($dataParameters)
     {
 
-        $fileData = json_decode(Storage::disk('public')->get('DataX.json'), true);
+        $fileData = json_decode(Storage::disk('file_json')->get('DataX.json'), true);
 
         $dataX=collect($fileData);
 
@@ -28,7 +28,6 @@ class DataXRepository implements DataXinterface
         if(isset($dataParameters['currency'])){
           $dataX = $dataX->where('currency',$dataParameters['currency']);
         }
-
 
           return $dataX;
 

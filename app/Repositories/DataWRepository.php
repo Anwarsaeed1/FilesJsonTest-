@@ -19,16 +19,16 @@ class DataWRepository implements DataWinterface
      */
     public function getDataW($dataParameters)
     {
-
-        $fileData = json_decode(Storage::disk('public')->get('DataW.json'), true);
+      
+        $fileData = json_decode(Storage::disk('file_json')->get('DataW.json'), true);
 
         $dataW=collect($fileData);
 
 
-        $dataX=collect($fileData);
+        $dataW=collect($fileData);
 
         if(isset($dataParameters['currency'])){
-          $dataX = $dataX->where('currency',$dataParameters['currency']);
+          $dataW = $dataW->where('currency',$dataParameters['currency']);
         }
        
 
