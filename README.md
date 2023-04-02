@@ -9,58 +9,75 @@
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The task:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- We have three providers that make transfers using a phone number. We need to read and create some filters on them to get the  aspired results.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ 
 
-## Learning Laravel
+Files:
+------------
+- DataW.json
+- DataX.json
+- DataY.json
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+ 
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-DataW schema is:
+{
+amount:200,
+mobile:0020111111111,
+status: done,
+currency: EGP,
+created_at: 2021-03-29 09:63:11,
+id:123456789
+}
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ 
 
-## Laravel Sponsors
+-DataX schema is:
+-----------------------
+{
+transactionAmount:200,
+currency: EGP,
+mobile:0020111111111,
+date: 2021-03-29 09:63:11,
+transaction_id:2223665411136
+}
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+ 
 
-### Premium Partners
+-DataY schema is:
+--------------------
+{
+amount:200,
+mobile:0020111111111,
+status: 100,
+currency: EGP,
+created_at: 2021-03-29 09:63:11,
+id:2fc2-a8dl
+}
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+ 
 
-## Contributing
+Requirements:
+------------------
+-   Using PHP Laravel
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   Implement API endpoint
 
-## Code of Conduct
+-    It should list all transactions from all providers (W, X, Y)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-    It should be able to filter results by status (paid, pending, reject)
 
-## Security Vulnerabilities
+-   It should be able to filter results by currency
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ 
 
-## License
+This task will be evaluated based on:
+-----------------------------------------
+- Code quality
+-  Application performance in reading large files
+- Unit test coverage
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ 
